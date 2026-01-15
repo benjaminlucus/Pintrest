@@ -1,8 +1,10 @@
 import React from 'react'
 
-const SinglePostPage = ({data}) => {
+const SinglePostPage = ({ data }) => {
   return (
-    <div>SinglePostPage</div>
+    <div>
+
+    </div>
   )
 }
 

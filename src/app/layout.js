@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import Providers from "./Providers";
+import PostProvider from "@/context/PostProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,19 +26,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <Providers>
+        <PostProvider>
+          <Providers>
+            <div className="flex min-h-screen">
+              <Sidebar />
 
-
-
-         <div className="flex min-h-screen">
-          <Sidebar />
-
-          <div className="flex flex-col flex-1">
-            <Header />
-            <main className="p-4">{children}</main>
-          </div>
-        </div>
-        </Providers>
+              <div className="flex flex-col flex-1">
+                <Header />
+                <main className="p-4">{children}</main>
+              </div>
+            </div>
+          </Providers>
+        </PostProvider>
       </body>
     </html>
   );
